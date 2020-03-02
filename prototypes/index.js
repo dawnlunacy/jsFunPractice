@@ -207,7 +207,12 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.map(cake => { 
+      return {
+        flavor: cake.cakeFlavor,
+        inStock: cake.inStock
+      };
+    });
     return result;
 
     // Annotation:
@@ -215,7 +220,9 @@ const cakePrompts = {
     // so we can use map 
     // we want to return an object back for each
     // that includes only the flavor key and the inStock key
-    
+    // note that in the original data set the key is 
+    // cakeFlavor vs just flavor
+
   },
 
   onlyInStock() {
