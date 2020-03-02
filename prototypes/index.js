@@ -31,7 +31,10 @@ const kittyPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Go through the array - map will return an array
+    // Look at the property of color 
+    // if it is oarnge return it
+    
   },
 
   sortByAge() {
