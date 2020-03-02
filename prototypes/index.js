@@ -29,14 +29,6 @@ const kittyPrompts = {
     // ['Tiger', 'Snickers']
     const result = kitties.filter(kitten => kitten.color === 'orange').map(kitten => kitten.name);
     return result;
-    // const result = kitties.map(kitten => {
-    //   if (kitten.color === 'orange') {
-    //     return kitten.name;
-    //   } else {
-    //     return;
-    //   }
-    // });
-    // return result;
 
     // Annotation:
     // Go through the array - map will return an array
@@ -48,11 +40,13 @@ const kittyPrompts = {
   sortByAge() {
     // Sort the kitties by their age
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.sort((a,b) =>  b.age - a.age);
     return result;
-
+  
     // Annotation:
-    // Write your annotation here as a comment
+    // This question wants you to return oldest to youngest. 
+    // sort by the property of age 
+    // high to low is b - a 
   },
 
   growUp() {
