@@ -63,8 +63,17 @@ const kittyPrompts = {
     // },
     // ...etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.map(kitty => {
+      kitty.age = kitty.age + 2;
+      return kitty;
+    });
     return result;
+
+    // annotations: 
+    //map through all of the kitties 
+    // isolate age and add 2 years
+    // return the entire kitty object  
+
   }
 };
 
