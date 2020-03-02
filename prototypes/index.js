@@ -104,7 +104,17 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = clubs.reduce((acc, currentClub) => {
+      currentClub.members.forEach(member => {
+        if (!acc[member]) {
+          acc[member] = [currentClub.club];
+        }
+        else {
+          acc[member].push(currentClub.club);
+        }
+      });
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
