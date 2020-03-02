@@ -27,8 +27,16 @@ const kittyPrompts = {
 
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-    const result = kittens.filter(kitten => kitten.color === 'oarnge').map(kitten => kitten.name);
+    const result = kitties.filter(kitten => kitten.color === 'orange').map(kitten => kitten.name);
     return result;
+    // const result = kitties.map(kitten => {
+    //   if (kitten.color === 'orange') {
+    //     return kitten.name;
+    //   } else {
+    //     return;
+    //   }
+    // });
+    // return result;
 
     // Annotation:
     // Go through the array - map will return an array
