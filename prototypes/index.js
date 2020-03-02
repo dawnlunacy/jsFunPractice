@@ -211,7 +211,11 @@ const cakePrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We want an array that is the same length as the original
+    // so we can use map 
+    // we want to return an object back for each
+    // that includes only the flavor key and the inStock key
+    
   },
 
   onlyInStock() {
