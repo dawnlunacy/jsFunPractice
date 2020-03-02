@@ -104,11 +104,31 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = clubs.reduce((acc, currentClub) => {
+      currentClub.members.forEach(member => {
+        if (!acc[member]) {
+          acc[member] = [currentClub.club];
+        }
+        else {
+          acc[member].push(currentClub.club);
+        }
+      });
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // The original data is an array of objects with a key of club to a string
+    // and a key of members to an array of name of members
+    // so I would like to reduce the original data since I want an object back
+    // I need to see if there is a key for each persons name - 
+    // the first time we see the persons name we know there will not be a key since
+    // at that time our initial value will just be an empty object
+    // if there is not a key that is their name, we need to make it and set it 
+    // to an array with the club that they are inside
+    // otherwise push the name of the club where their name also appears in the members
+    // into the array that is associated with the key of their name 
+
   }
 };
 
