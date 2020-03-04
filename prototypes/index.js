@@ -250,7 +250,10 @@ const cakePrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Notice that when stock in 0 , the cakes will not be in stock
+    // So we know we want an array that is a smaller length than an original 
+    // so we can use filter to filter out the cakes that have a property of 
+    // inStock greater than 0 
   },
 
   totalInventory() {
