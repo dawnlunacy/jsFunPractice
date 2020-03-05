@@ -411,7 +411,8 @@ const classPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // sort through each classroom 
+    // organize least to great (a-b) for the capacity of classroom
   }
 };
 
