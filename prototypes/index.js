@@ -383,7 +383,14 @@ const classPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // we will need an obect for a starting value
+    // we can start with feCapacity as a key assigned to 0
+    // and we can start with beCapacity as a key assign to 0
+    // we should then interate over each classroom and check each program
+    // if it is equal to 'FE' then find feCapacity and add the current value
+    // with the current classrooms capacity
+    // repeat for be
+    
   },
 
   sortByCapacity() {
