@@ -363,11 +363,12 @@ const classPrompts = {
     //   { roomLetter: 'G', program: 'FE', capacity: 29 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = classrooms.filter(classroom => classroom.program === 'FE');
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // filter through the array and return only the FE program
+    // check program and ensure it is equal to 'FE'
   },
 
   totalCapacities() {
@@ -378,21 +379,40 @@ const classPrompts = {
     //   beCapacity: 96
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = classrooms.reduce((acc, currentClassroom) => {
+      if (currentClassroom.program === 'FE') {
+        acc.feCapacity += currentClassroom.capacity;
+      } else if (currentClassroom.program === 'BE') {
+        acc.beCapacity += currentClassroom.capacity;
+      }
+      return acc;
+    }, {
+      feCapacity: 0,
+      beCapacity: 0
+    });
+
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // we will need an obect for a starting value
+    // we can start with feCapacity as a key assigned to 0
+    // and we can start with beCapacity as a key assign to 0
+    // we should then interate over each classroom and check each program
+    // if it is equal to 'FE' then find feCapacity and add the current value
+    // with the current classrooms capacity
+    // repeat for be
+
   },
 
   sortByCapacity() {
     // Return the array of classrooms sorted by their capacity (least capacity to greatest)
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = classrooms.sort((a,b) => a.capacity - b.capacity);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // sort through each classroom 
+    // organize least to great (a-b) for the capacity of classroom
   }
 };
 
