@@ -435,11 +435,18 @@ const bookPrompts = {
     //   'Catch-22', 'Treasure Island']
 
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = books.filter(book => book.genre !== 'Horror' && book.genre !== 'True Crime').map(book => book.title);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Iterate over each book 
+    // the length of the returning array should not be the same as the starting array
+    // if the genre is not 'Horror' or 'True Crime'
+    // note that it need to be an && operator and not an or operator
+    // if it is an or operator, then it will always pass as true for the genre
+    // note here that filter returns the entire current element
+    // this is why we must map over the books and return only the titles
+    // then return the title
 
   },
   getNewBooks() {
