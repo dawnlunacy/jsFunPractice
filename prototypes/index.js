@@ -282,8 +282,14 @@ const cakePrompts = {
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
+    // Annotation:
+    // Iterate over every cake
+    // iterate over the toppings
+    // Start with an empty array
+    // if the array does not include the topping
+    // then push it into the array
+    // otherwise ignore it
     
-
   },
 
   groceryList() {
