@@ -314,7 +314,7 @@ const cakePrompts = {
     // }
 
     const result = cakes.reduce((acc, currentCake) => {
-      currentCake.toppings.forEach(topping => {
+      currentCake.toppings.forEach(toppcing => {
         if(!acc[topping]) {
           acc[topping] = 1;
         } else {
@@ -367,7 +367,8 @@ const classPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // filter through the array and return only the FE program
+    // check program and ensure it is equal to 'FE'
   },
 
   totalCapacities() {
