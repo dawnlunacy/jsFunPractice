@@ -260,11 +260,18 @@ const cakePrompts = {
     // Return the total amount of cakes in stock e.g.
     // 59
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, currentCake) => {
+      acc += currentCake.inStock;
+
+      return acc;
+    }, 0);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // For total inventory of how many cakes are in stock 
+    // Go through every object in the array 
+    // and add up the totals
+
   },
 
   allToppings() {
@@ -275,8 +282,8 @@ const cakePrompts = {
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
-    // Annotation:
-    // Write your annotation here as a comment
+    
+
   },
 
   groceryList() {
