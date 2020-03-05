@@ -457,16 +457,27 @@ const bookPrompts = {
     //  { title: 'Life of Pi', year: 2001 },
     //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = books.reduce((acc, currentBook) => {
+      if (currentBook.published >= 1990) {
+        acc.push({
+          title: currentBook.title,
+          year: currentBook.published
+        });
+      }
+      
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
+    // answer will need to be an array of unique objects
     // Iterate over each book
     // Final Array will not be the same length as starting array
     // if the book was published between 1990 or above
     // then return an obect
     // with a key of title
     // and a key of year (which is a unique property not in the original info)
+    // push this object into the array which is your final answer
   }
 
 };
