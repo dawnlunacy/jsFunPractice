@@ -461,7 +461,12 @@ const bookPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Iterate over each book
+    // Final Array will not be the same length as starting array
+    // if the book was published between 1990 or above
+    // then return an obect
+    // with a key of title
+    // and a key of year (which is a unique property not in the original info)
   }
 
 };
