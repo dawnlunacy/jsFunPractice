@@ -207,11 +207,22 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.map(cake => { 
+      return {
+        flavor: cake.cakeFlavor,
+        inStock: cake.inStock
+      };
+    });
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We want an array that is the same length as the original
+    // so we can use map 
+    // we want to return an object back for each
+    // that includes only the flavor key and the inStock key
+    // note that in the original data set the key is 
+    // cakeFlavor vs just flavor
+
   },
 
   onlyInStock() {
@@ -235,22 +246,32 @@ const cakePrompts = {
     // ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.filter(cake => cake.inStock > 0);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Notice that when stock in 0 , the cakes will not be in stock
+    // So we know we want an array that is a smaller length than an original 
+    // so we can use filter to filter out the cakes that have a property of 
+    // inStock greater than 0 
   },
 
   totalInventory() {
     // Return the total amount of cakes in stock e.g.
     // 59
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, currentCake) => {
+      acc += currentCake.inStock;
+
+      return acc;
+    }, 0);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // For total inventory of how many cakes are in stock 
+    // Go through every object in the array 
+    // and add up the totals
+
   },
 
   allToppings() {
@@ -258,11 +279,27 @@ const cakePrompts = {
     // every cake in the dataset e.g.
     // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, currentCake) => {
+      currentCake.toppings.forEach(topping => {
+        if(!acc.includes(topping)) {
+          acc.push(topping);
+        } else {
+          return;
+        }
+      }); 
+
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Iterate over every cake
+    // iterate over the toppings
+    // Start with an empty array
+    // if the array does not include the topping
+    // then push it into the array
+    // otherwise ignore it
+    
   },
 
   groceryList() {
@@ -276,11 +313,26 @@ const cakePrompts = {
     //    ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, currentCake) => {
+      currentCake.toppings.forEach(topping => {
+        if(!acc[topping]) {
+          acc[topping] = 1;
+        } else {
+          acc[topping] +=1;
+        }
+      });
+
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Iterate over each cake
+    // iterate over each topping
+    // start with an empty object
+    // if the empty does not have a key for the topping
+    // then make it and asign it to 1 
+    // otherwise add one to the key that is that topping
   }
 };
 
