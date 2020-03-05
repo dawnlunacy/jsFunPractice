@@ -435,11 +435,18 @@ const bookPrompts = {
     //   'Catch-22', 'Treasure Island']
 
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = books.filter(book => book.genre !== 'Horror' && book.genre !== 'True Crime').map(book => book.title);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Iterate over each book 
+    // the length of the returning array should not be the same as the starting array
+    // if the genre is not 'Horror' or 'True Crime'
+    // note that it need to be an && operator and not an or operator
+    // if it is an or operator, then it will always pass as true for the genre
+    // note here that filter returns the entire current element
+    // this is why we must map over the books and return only the titles
+    // then return the title
 
   },
   getNewBooks() {
@@ -450,11 +457,27 @@ const bookPrompts = {
     //  { title: 'Life of Pi', year: 2001 },
     //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = books.reduce((acc, currentBook) => {
+      if (currentBook.published >= 1990) {
+        acc.push({
+          title: currentBook.title,
+          year: currentBook.published
+        });
+      }
+      
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // answer will need to be an array of unique objects
+    // Iterate over each book
+    // Final Array will not be the same length as starting array
+    // if the book was published between 1990 or above
+    // then return an obect
+    // with a key of title
+    // and a key of year (which is a unique property not in the original info)
+    // push this object into the array which is your final answer
   }
 
 };
