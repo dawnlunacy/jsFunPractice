@@ -313,7 +313,17 @@ const cakePrompts = {
     //    ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = cakes.reduce((acc, currentCake) => {
+      currentCake.toppings.forEach(topping => {
+        if(!acc[topping]) {
+          acc[topping] = 1;
+        } else {
+          acc[topping] +=1;
+        }
+      });
+
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
