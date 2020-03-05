@@ -22,7 +22,7 @@ describe('PROTOTYPES', () => {
   describe('Kitty Prompts', () => {
     it('orangeKittyNames', () => {
       const e = kittyPrompts.orangeKittyNames();
-      expect(e).to.deep.equal(['Tiger', 'Snickers'])
+      expect(e).to.deep.equal(['Tiger', 'Snickers']);
     }), it('sortByAge', () => {
       const e = kittyPrompts.sortByAge();
       expect(e).to.deep.equal([{
@@ -41,7 +41,7 @@ describe('PROTOTYPES', () => {
         name: 'Max',
         age: 1,
         color: 'tuxedo'
-      }])
+      }]);
     }), it('growUp', () => {
       const e = kittyPrompts.growUp();
       expect(e).to.deep.equal([{
@@ -60,8 +60,8 @@ describe('PROTOTYPES', () => {
         name: 'Max',
         age: 3,
         color: 'tuxedo'
-      }])
-    })
+      }]);
+    });
   }), describe('Club Prompts', () => {
     it('membersBelongingToClubs', () => {
       const e = clubPrompts.membersBelongingToClubs({
@@ -87,8 +87,8 @@ describe('PROTOTYPES', () => {
         David: ['Chess', 'Newspaper', 'FBLA'],
         Brittany: ['Chess', 'Newspaper'],
         Christie: ['Newspaper', 'FBLA']
-      })
-    })
+      });
+    });
   }), describe('Mod Prompts', () => {
     it('studentsPerMod', () => {
       const e = modPrompts.studentsPerMod();
@@ -104,8 +104,8 @@ describe('PROTOTYPES', () => {
       }, {
         mod: 4,
         studentsPerInstructor: 8
-      }])
-    })
+      }]);
+    });
   }), describe('Cake Prompts', () => {
     it('stockPerCake', () => {
       const e = cakePrompts.stockPerCake();
@@ -127,7 +127,7 @@ describe('PROTOTYPES', () => {
       }, {
         flavor: 'honey',
         inStock: 0
-      }])
+      }]);
     }), it('onlyInStock', () => {
       const e = cakePrompts.onlyInStock();
       expect(e).to.deep.equal([{
@@ -154,13 +154,13 @@ describe('PROTOTYPES', () => {
         frosting: 'whipped cream',
         toppings: ['smoked sea salt', 'crystallized ginger', 'berries'],
         inStock: 21
-      }])
+      }]);
     }), it('totalInventory', () => {
       const e = cakePrompts.totalInventory();
-      expect(e).to.deep.equal(59)
+      expect(e).to.deep.equal(59);
     }), it('allToppings', () => {
       const e = cakePrompts.allToppings();
-      expect(e).to.deep.equal(['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', 'edible flowers', 'mint', 'cranberry', 'crystallized ginger'])
+      expect(e).to.deep.equal(['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', 'edible flowers', 'mint', 'cranberry', 'crystallized ginger']);
     }), it('groceryList', () => {
       const e = cakePrompts.groceryList();
       expect(e).to.deep.equal({
@@ -172,8 +172,8 @@ describe('PROTOTYPES', () => {
         mint: 1,
         cranberry: 1,
         'crystallized ginger': 2
-      })
-    })
+      });
+    });
   }), describe('Class Prompts', () => {
     it('feClassrooms', () => {
       const e = classPrompts.feClassrooms();
@@ -193,13 +193,13 @@ describe('PROTOTYPES', () => {
         roomLetter: 'G',
         program: 'FE',
         capacity: 29
-      }])
+      }]);
     }), it('totalCapacities', () => {
       const e = classPrompts.totalCapacities();
       expect(e).to.deep.equal({
         feCapacity: 110,
         beCapacity: 96
-      })
+      });
     }), it('sortByCapacity', () => {
       const e = classPrompts.sortByCapacity();
       expect(e).to.deep.equal([{
@@ -234,8 +234,8 @@ describe('PROTOTYPES', () => {
         roomLetter: 'A',
         program: 'FE',
         capacity: 32
-      }])
-    })
+      }]);
+    });
   }),
   describe('Book prompts', () => {
     it('removeViolence', () => {
@@ -253,28 +253,28 @@ describe('PROTOTYPES', () => {
         'The Curious Incident of the Dog in the Night-Time',
         'The Bell Jar',
         'Catch-22',
-        'Treasure Island'])
+        'Treasure Island']);
     }),
     it('getNewBooks', () => {
       const e = bookPrompts.getNewBooks();
       expect(e).to.deep.equal([{
         title: 'Harry Potter and the Sorcerer\'s Stone', year: 1997 },
-        { title: 'Life of Pi', year: 2001 },
-        { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003
-      }])
-    })
+      { title: 'Life of Pi', year: 2001 },
+      { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003
+      }]);
+    });
   }),
   describe('Weather prompts', () => {
     it('getAverageTemps', () => {
       const e = weatherPrompts.getAverageTemps();
       expect(e).to.deep.equal([
         40, 40, 44.5, 43.5, 57, 35, 65.5, 62, 14, 46.5
-      ])
+      ]);
     }),
     it('findSunnySpots', () => {
       const e = weatherPrompts.findSunnySpots();
       expect(e).to.deep.equal(['Atlanta, Georgia is sunny.', 'New Orleans, Louisiana is sunny.', 'Raleigh, North Carolina is mostly sunny.']
-      )
+      );
     }),
     it('findHighestHumidity', () => {
       const e = weatherPrompts.findHighestHumidity();
@@ -283,8 +283,8 @@ describe('PROTOTYPES', () => {
         type: 'cloudy',
         humidity: 84,
         temperature: { high: 49, low: 38 }
-      })
-    })
+      });
+    });
   }),
   describe('National Park Prompts', () => {
     it('getParkVisitList', () => {
@@ -292,24 +292,24 @@ describe('PROTOTYPES', () => {
       expect(e).to.deep.equal({
         parksToVisit: [ 'Yellowstone', 'Glacier', 'Everglades' ],
         parksVisited: [ 'Rocky Mountain', 'Acadia', 'Zion' ]
-      })
+      });
     }),
     it('getParkActivities', () => {
       const e = nationalParksPrompts.getParkActivities();
       expect(e).to.deep.equal(
-      [ 'hiking',
-        'shoeshoing',
-        'camping',
-        'fishing',
-        'boating',
-        'watching wildlife',
-        'cross-country skiing',
-        'swimming',
-        'bird watching',
-        'canyoneering',
-        'backpacking',
-        'rock climbing'
-      ])
+        [ 'hiking',
+          'shoeshoing',
+          'camping',
+          'fishing',
+          'boating',
+          'watching wildlife',
+          'cross-country skiing',
+          'swimming',
+          'bird watching',
+          'canyoneering',
+          'backpacking',
+          'rock climbing'
+        ]);
     }),
     it('getParkInEachState', () => {
       const e = nationalParksPrompts.getParkInEachState();
@@ -321,13 +321,13 @@ describe('PROTOTYPES', () => {
           { Maine: 'Acadia' },
           { Utah: 'Zion' },
           { Florida: 'Everglades' }
-        ])
-    })
+        ]);
+    });
   }),
   describe('Brewery Prompts', () => {
     it('getBeerCount', () => {
       const e = breweryPrompts.getBeerCount();
-      expect(e).to.deep.equal(40)
+      expect(e).to.deep.equal(40);
     }), it('getBreweryBeerCount', () => {
       const e = breweryPrompts.getBreweryBeerCount();
       expect(e).to.deep.equal([{
@@ -345,7 +345,7 @@ describe('PROTOTYPES', () => {
       }, {
         name: 'Platt Park Brewing Co.',
         beerCount: 7
-      }])
+      }]);
     }), it('findHighestAbvBeer', () => {
       const e = breweryPrompts.findHighestAbvBeer();
       expect(e).to.deep.equal({
@@ -353,8 +353,8 @@ describe('PROTOTYPES', () => {
         type: 'Barley Wine',
         abv: 10.9,
         ibu: 40
-      })
-    })
+      });
+    });
   }), describe('Turing Prompts', () => {
     it('studentsForEachInstructor', () => {
       const e = turingPrompts.studentsForEachInstructor();
@@ -385,7 +385,7 @@ describe('PROTOTYPES', () => {
       }, {
         name: 'Will',
         studentCount: 20
-      }])
+      }]);
     }), it('studentsPerInstructor', () => {
       const e = turingPrompts.studentsPerInstructor();
       expect(e).to.deep.equal({
@@ -393,7 +393,7 @@ describe('PROTOTYPES', () => {
         cohort1804: 7,
         cohort1803: 10,
         cohort1801: 9
-      })
+      });
     }), it('modulesPerTeacher', () => {
       const e = turingPrompts.modulesPerTeacher();
       expect(e).to.deep.equal({
@@ -406,7 +406,7 @@ describe('PROTOTYPES', () => {
         Louisa: [1, 2, 3, 4],
         Christie: [1, 2, 3, 4],
         Will: [1, 2, 3, 4]
-      })
+      });
     }), it('curriculumPerTeacher', () => {
       const e = turingPrompts.curriculumPerTeacher();
       expect(e).to.deep.equal({
@@ -421,8 +421,8 @@ describe('PROTOTYPES', () => {
         pwas: ['Brittany', 'Robbie', 'Leta', 'Louisa'],
         mobile: ['Nathaniel'],
         node: ['Pam', 'Robbie', 'Leta', 'Louisa', 'Christie']
-      })
-    })
+      });
+    });
   }), describe('Boss Prompts', () => {
     it('bossLoyalty', () => {
       const e = bossPrompts.bossLoyalty();
@@ -435,8 +435,8 @@ describe('PROTOTYPES', () => {
       }, {
         bossName: 'Jafar',
         sidekickLoyalty: 3
-      }])
-    })
+      }]);
+    });
   }), describe('Astronomy Prompts', () => {
     it('starsInConstellations', () => {
       const e = astronomyPrompts.starsInConstellations();
@@ -451,7 +451,7 @@ describe('PROTOTYPES', () => {
         constellation: 'Orion',
         lightYearsFromEarth: 640,
         color: 'red'
-      }])
+      }]);
     }), it('starsByColor', () => {
       const e = astronomyPrompts.starsByColor();
       expect(e).to.deep.equal({
@@ -526,15 +526,15 @@ describe('PROTOTYPES', () => {
           lightYearsFromEarth: 640,
           color: 'red'
         }]
-      })
+      });
     }), it('constellationsStarsExistIn', () => {
       const e = astronomyPrompts.constellationsStarsExistIn();
-      expect(e).to.deep.equal(['Canis Major', 'Carina', 'Boötes', 'Auriga', 'Orion', 'Lyra', 'Canis Minor', 'The Plow', 'Orion', 'The Little Dipper'])
-    })
+      expect(e).to.deep.equal(['Canis Major', 'Carina', 'Boötes', 'Auriga', 'Orion', 'Lyra', 'Canis Minor', 'The Plow', 'Orion', 'The Little Dipper']);
+    });
   }), describe('Ultima Prompts', () => {
     it('totalDamage', () => {
       const e = ultimaPrompts.totalDamage();
-      expect(e).to.deep.equal(113)
+      expect(e).to.deep.equal(113);
     }), it('charactersByTotal', () => {
       const e = ultimaPrompts.charactersByTotal();
       expect(e).to.deep.equal([{
@@ -557,8 +557,8 @@ describe('PROTOTYPES', () => {
           damage: 27,
           range: 24
         }
-      }])
-    })
+      }]);
+    });
   }), describe('Dinosaur Prompts', () => {
     it('countAwesomeDinosaurs', () => {
       const e = dinosaurPrompts.countAwesomeDinosaurs();
@@ -568,7 +568,7 @@ describe('PROTOTYPES', () => {
         'Jurassic Park III': 9,
         'Jurassic World': 11,
         'Jurassic World: Fallen Kingdom': 18
-      })
+      });
     }), it('averageAgePerMovie', () => {
       const e = dinosaurPrompts.averageAgePerMovie();
       expect(e).to.deep.equal({
@@ -585,7 +585,7 @@ describe('PROTOTYPES', () => {
         'J. A. Bayona': {
           'Jurassic World: Fallen Kingdom': 59
         }
-      })
+      });
     }), it('uncastActors', () => {
       const e = dinosaurPrompts.uncastActors();
       expect(e).to.deep.equal([{
@@ -606,7 +606,7 @@ describe('PROTOTYPES', () => {
         name: 'Jeo D',
         nationality: 'Martian',
         imdbStarMeterRating: 0
-      }])
+      }]);
     }), it('actorsAgesInMovies', () => {
       const e = dinosaurPrompts.actorsAgesInMovies();
       expect(e).to.deep.equal([{
@@ -636,7 +636,7 @@ describe('PROTOTYPES', () => {
       }, {
         name: 'Bryce Dallas Howard',
         ages: [34, 37]
-      }])
-    })
-  })
-})
+      }]);
+    });
+  });
+});
