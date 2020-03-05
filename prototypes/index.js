@@ -379,7 +379,18 @@ const classPrompts = {
     //   beCapacity: 96
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = classrooms.reduce((acc, currentClassroom) => {
+      if (currentClassroom.program === 'FE') {
+        acc.feCapacity += currentClassroom.capacity;
+      } else if (currentClassroom.program === 'BE') {
+        acc.beCapacity += currentClassroom.capacity;
+      }
+      return acc;
+    }, {
+      feCapacity: 0,
+      beCapacity: 0
+    });
+
     return result;
 
     // Annotation:
@@ -390,7 +401,7 @@ const classPrompts = {
     // if it is equal to 'FE' then find feCapacity and add the current value
     // with the current classrooms capacity
     // repeat for be
-    
+
   },
 
   sortByCapacity() {
