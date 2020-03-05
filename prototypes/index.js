@@ -314,7 +314,7 @@ const cakePrompts = {
     // }
 
     const result = cakes.reduce((acc, currentCake) => {
-      currentCake.toppings.forEach(toppcing => {
+      currentCake.toppings.forEach(topping => {
         if(!acc[topping]) {
           acc[topping] = 1;
         } else {
@@ -363,7 +363,7 @@ const classPrompts = {
     //   { roomLetter: 'G', program: 'FE', capacity: 29 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = classrooms.filter(classroom => classroom.program === 'FE');
     return result;
 
     // Annotation:
