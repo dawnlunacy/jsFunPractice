@@ -317,7 +317,12 @@ const cakePrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Iterate over each cake
+    // iterate over each topping
+    // start with an empty object
+    // if the empty does not have a key for the topping
+    // then make it and asign it to 1 
+    // otherwise add one to the key that is that topping
   }
 };
 
