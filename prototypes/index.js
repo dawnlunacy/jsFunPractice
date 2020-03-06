@@ -551,7 +551,14 @@ const weatherPrompts = {
     //   temperature: { high: 49, low: 38 }
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = weather.reduce((acc, currentPlace) => {
+      if (currentPlace.humidity > acc.humidity) {
+        acc = currentPlace;
+      } else {
+        return acc;
+      }
+      return acc;
+    }, {humidity:0});
     return result;
 
     // Annotation:
