@@ -499,7 +499,14 @@ const weatherPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // For this we will need to iterate over every location
+    // to find the avg temp we willl need to 
+    // dig into the temperature property
+    // and add high to low and then divide by 2
+    // our final answer is an array that is the same lenght as the original
+    // so we can map over the original data and
+    // return only the avg temp
+    
   },
 
   findSunnySpots() {
