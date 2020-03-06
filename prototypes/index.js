@@ -523,7 +523,15 @@ const weatherPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // The original array is a different length than the array we will be returning
+    // because we want a custom array back
+    // reduce will be easiest
+    // with the initial value being an empty array
+    // iterate over each location
+    // check if the type of weather is equal to 'sunny'
+    //if it is then push in a custom sentence by
+    // concatenating the location with + 'is' type' which will be 'sunny or mostly sunny'
+    // return the array
   },
 
   findHighestHumidity() {
