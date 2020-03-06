@@ -519,8 +519,16 @@ const weatherPrompts = {
     // 'New Orleans, Louisiana is sunny.',
     // 'Raleigh, North Carolina is mostly sunny.' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = weather.reduce((acc, currentPlace) => {
+      if(currentPlace.type.includes('sunny')) {
+        let sentence = `${currentPlace.location} is ${currentPlace.type}.`;
+        acc.push(sentence);
+      }
+      return acc;
+    }, []);
+
     return result;
+    
 
     // Annotation:
     // The original array is a different length than the array we will be returning
@@ -530,7 +538,7 @@ const weatherPrompts = {
     // iterate over each location
     // check if the type of weather is equal to 'sunny'
     //if it is then push in a custom sentence by
-    // concatenating the location with + 'is' type' which will be 'sunny or mostly sunny'
+    // concatenating the location with is 'type' which will be 'sunny or mostly sunny'
     // return the array
   },
 
