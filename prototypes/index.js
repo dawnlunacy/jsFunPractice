@@ -555,7 +555,14 @@ const weatherPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Iterate over each day
+    // our return value will be a singular object
+    // we will need to be able to compare a high humidity point to 
+    // each day we iterate over
+    // if that humidity is higher
+    // then replace the high humidity point 
+    // at the end return the singular object with the highest humidity point
+    
 
   }
 };
