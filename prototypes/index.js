@@ -452,7 +452,6 @@ const bookPrompts = {
   getNewBooks() {
     // return an array of objects containing all books that were
     // published in the 90's and 00's. Inlucde the title and the year Eg:
-
     // [{ title: 'Harry Potter and the Sorcerer\'s Stone', year: 1997 },
     //  { title: 'Life of Pi', year: 2001 },
     //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
@@ -496,11 +495,21 @@ const weatherPrompts = {
     // return an array of all the average temperatures. Eg:
     // [ 40, 40, 44.5, 43.5, 57, 35, 65.5, 62, 14, 46.5 ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = weather.map(place => {
+      let totalTemp = place.temperature.high + place.temperature.low;
+      return totalTemp / 2;
+    });
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // For this we will need to iterate over every location
+    // to find the avg temp we willl need to 
+    // dig into the temperature property
+    // and add high to low and then divide by 2
+    // our final answer is an array that is the same lenght as the original
+    // so we can map over the original data and
+    // return only the avg temp
+    
   },
 
   findSunnySpots() {
@@ -510,11 +519,27 @@ const weatherPrompts = {
     // 'New Orleans, Louisiana is sunny.',
     // 'Raleigh, North Carolina is mostly sunny.' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = weather.reduce((acc, currentPlace) => {
+      if(currentPlace.type.includes('sunny')) {
+        let sentence = `${currentPlace.location} is ${currentPlace.type}.`;
+        acc.push(sentence);
+      }
+      return acc;
+    }, []);
+
     return result;
+    
 
     // Annotation:
-    // Write your annotation here as a comment
+    // The original array is a different length than the array we will be returning
+    // because we want a custom array back
+    // reduce will be easiest
+    // with the initial value being an empty array
+    // iterate over each location
+    // check if the type of weather is equal to 'sunny'
+    //if it is then push in a custom sentence by
+    // concatenating the location with is 'type' which will be 'sunny or mostly sunny'
+    // return the array
   },
 
   findHighestHumidity() {
@@ -526,11 +551,25 @@ const weatherPrompts = {
     //   temperature: { high: 49, low: 38 }
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = weather.reduce((acc, currentPlace) => {
+      if (currentPlace.humidity > acc.humidity) {
+        acc = currentPlace;
+      } else {
+        return acc;
+      }
+      return acc;
+    }, {humidity:0});
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Iterate over each day
+    // our return value will be a singular object
+    // we will need to be able to compare a high humidity point to 
+    // each day we iterate over
+    // if that humidity is higher
+    // then replace the high humidity point 
+    // at the end return the singular object with the highest humidity point
+    
 
   }
 };
