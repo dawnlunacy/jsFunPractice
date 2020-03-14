@@ -596,7 +596,20 @@ const nationalParksPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // The original data is an array of objects 
+    // The final answer is a single object
+    // We can use reduce to create this final object
+    // we can start the object with 
+    // parksToVisit and parksVisited and the keys
+    // and empty arrays as their values
+    // when we reduce over the original dataset
+    // we will check the key of visited
+    // if true then push the name of that park
+    // into parksVisited array 
+    // else push the name of the park 
+    // into parksToVisit array
+    // return the final object
+    
   },
 
   getParkInEachState() {
