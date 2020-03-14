@@ -677,7 +677,17 @@ const nationalParksPrompts = {
     //   'backpacking',
     //   'rock climbing' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = nationalParks.reduce((acc, currentPark) => {
+      currentPark.activities.forEach(activity => {
+        if (!acc.includes(activity)) {
+          acc.push(activity);
+        } else {
+          return;
+        }
+      });
+
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
@@ -686,9 +696,9 @@ const nationalParksPrompts = {
     // we can reduce over the data and set our initialValue to
     // an empty array
     // for every current iteration we will need to 
-    // target the avtivities key which is an array
+    // target the activities key which is an array
     // and forEach over each activity
-    // we can check if our acc/initialValue includes this ket
+    // we can check if our acc/initialValue includes this key
     // and if not we can push it into our acc/initialValue
     // be sure to return the acc 
   }
