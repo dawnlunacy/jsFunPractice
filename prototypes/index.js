@@ -637,7 +637,14 @@ const nationalParksPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // The original dataset is an array of objects
+    // the answer we want back in also an array of objects the same length, 
+    // we can map over the original dataset
+    // and we can return an object with 
+    // the key as the current iteratation's location 
+    // assighed to the current iteration's name
+    
+
   },
 
   getParkActivities() {
