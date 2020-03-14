@@ -681,7 +681,16 @@ const nationalParksPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // The original dataset is an array of objects
+    // we want make an array that is a different length
+    // we can reduce over the data and set our initialValue to
+    // an empty array
+    // for every current iteration we will need to 
+    // target the avtivities key which is an array
+    // and forEach over each activity
+    // we can check if our acc/initialValue includes this ket
+    // and if not we can push it into our acc/initialValue
+    // be sure to return the acc 
   }
 };
 
