@@ -592,11 +592,35 @@ const nationalParksPrompts = {
     //   parksVisited: ["Rocky Mountain", "Acadia", "Zion"]
     //}
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = nationalParks.reduce((acc, currentPark) => {
+      if (currentPark.visited) {
+        acc.parksVisited.push(currentPark.name);
+      } else {
+        acc.parksToVisit.push(currentPark.name);
+      }
+
+      return acc;
+    }, {
+      parksToVisit: [],
+      parksVisited: []
+    });
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // The original data is an array of objects 
+    // The final answer is a single object
+    // We can use reduce to create this final object
+    // we can start the object with 
+    // parksToVisit and parksVisited and the keys
+    // and empty arrays as their values
+    // when we reduce over the original dataset
+    // we will check the key of visited
+    // if true then push the name of that park
+    // into parksVisited array 
+    // else push the name of the park 
+    // into parksToVisit array
+    // return the final object
+
   },
 
   getParkInEachState() {
@@ -609,11 +633,32 @@ const nationalParksPrompts = {
     // { Florida: 'Everglades' } ]
 
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = nationalParks.map(currentPark => {
+      return {
+        [currentPark.location]: currentPark.name
+      };
+    });
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // The original dataset is an array of objects
+    // the answer we want back in also an array of objects the same length, 
+    // we can map over the original dataset
+    // and we can return an object with 
+    // the key as the current iteratation's location 
+    // assighed to the current iteration's name
+
+    // if you are having issues with this one 
+    // console.log the result 
+    // for the key if it is not it brackets it will look for a variable since
+    // the key needs to be a string and it is not
+    // but if we put the value as bracket notation
+    // the it will interpret that we want the datatype to be
+    // an array
+    
+    
+
+
   },
 
   getParkActivities() {
@@ -632,11 +677,30 @@ const nationalParksPrompts = {
     //   'backpacking',
     //   'rock climbing' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = nationalParks.reduce((acc, currentPark) => {
+      currentPark.activities.forEach(activity => {
+        if (!acc.includes(activity)) {
+          acc.push(activity);
+        } else {
+          return;
+        }
+      });
+
+      return acc;
+    }, []);
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // The original dataset is an array of objects
+    // we want make an array that is a different length
+    // we can reduce over the data and set our initialValue to
+    // an empty array
+    // for every current iteration we will need to 
+    // target the activities key which is an array
+    // and forEach over each activity
+    // we can check if our acc/initialValue includes this key
+    // and if not we can push it into our acc/initialValue
+    // be sure to return the acc 
   }
 };
 
