@@ -633,7 +633,11 @@ const nationalParksPrompts = {
     // { Florida: 'Everglades' } ]
 
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = nationalParks.map(currentPark => {
+      return {
+        [currentPark.location]: currentPark.name
+      };
+    });
     return result;
 
     // Annotation:
@@ -643,7 +647,17 @@ const nationalParksPrompts = {
     // and we can return an object with 
     // the key as the current iteratation's location 
     // assighed to the current iteration's name
+
+    // if you are having issues with this one 
+    // console.log the result 
+    // for the key if it is not it brackets it will look for a variable since
+    // the key needs to be a string and it is not
+    // but if we put the value as bracket notation
+    // the it will interpret that we want the datatype to be
+    // an array
     
+    
+
 
   },
 
