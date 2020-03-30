@@ -771,7 +771,17 @@ const breweryPrompts = {
     // e.g.
     // { name: 'Barrel Aged Nature\'s Sweater', type: 'Barley Wine', abv: 10.9, ibu: 40 }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = breweries.reduce((acc, currentBrewery) => {
+      if(acc === 0) {
+        acc = currentBrewery.beers[0];
+      }
+      currentBrewery.beers.forEach(beer => {
+        if(beer.abv > acc.abv) {
+          acc = beer;
+        }
+      });
+      return acc;
+    },0);
     return result;
 
     // Annotation:
@@ -780,7 +790,8 @@ const breweryPrompts = {
     // we want to iterate over each beer is the beers array for
     // each brewery
     // we want to compare the abv and if it higher that the one we have 
-    // set for the acc in our reduce (we will want to assign our acc to the first beer)
+    // set for the acc in our reduce (we will want to assign our acc to 0 to start)
+    // then if the acc is 0 assign it to our first beer in the first brewery for comparison
     // if it is higher then replace the acc
     // otherwise skip over it 
     // return the acc 
