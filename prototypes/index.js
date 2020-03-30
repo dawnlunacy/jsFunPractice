@@ -749,7 +749,12 @@ const breweryPrompts = {
     // ...etc.
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = breweries.map(currentBrewery => {
+      return {
+        name: currentBrewery.name,
+        beerCount: currentBrewery.beers.length
+      };
+    });
     return result;
 
     // Annotation:
