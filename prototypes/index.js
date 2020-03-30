@@ -727,7 +727,12 @@ const breweryPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We want to return the total count of breweries 
+    // we have an array of objects with a key a beers
+    // which is an array of all the beers
+    // We need to iterate over each brewery and look at the beers property
+    // then take the length of each and add it together 
+    // which means reduce could be a great option to get the total
   },
 
   getBreweryBeerCount() {
