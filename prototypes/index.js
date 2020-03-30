@@ -775,7 +775,15 @@ const breweryPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // Our original data is an array of objects
+    // We want to return a single object (reduce)
+    // we want to iterate over each beer is the beers array for
+    // each brewery
+    // we want to compare the abv and if it higher that the one we have 
+    // set for the acc in our reduce (we will want to assign our acc to the first beer)
+    // if it is higher then replace the acc
+    // otherwise skip over it 
+    // return the acc 
   }
 };
 
