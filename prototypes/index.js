@@ -889,7 +889,20 @@ const turingPrompts = {
     //     Will: [1, 2, 3, 4]
     //   }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.reduce((acc, currentInstructor) => {
+      if(!acc[currentInstructor.name]) {
+        acc[currentInstructor.name] = [currentInstructor.module];
+      }
+      currentInstructor.teaches.forEach(topic => {
+        cohorts.forEach(currentCohort => {
+          if(currentCohort.curriculum.includes(topic) && !acc[currentInstructor.name].includes(currentCohort.module)) {
+            acc[currentInstructor.name].push(currentCohort.module);
+            acc[currentInstructor.name].sort((a,b) => a - b);
+          } 
+        });
+      });
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
@@ -902,6 +915,8 @@ const turingPrompts = {
     // you loop through the curriculum and if if there is a match
     // then push the number for the module from cohorts into that key of 
     // the current teacher you are on
+    // ensure there are no duplicates
+    // and sort my lowest mod number to highest mod number
     // return the acc 
     // 
   },
@@ -920,7 +935,15 @@ const turingPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We want to return a singular object with a key of curriculum topic
+    // so we can reduce over the instructors
+    // we can then forEach over teaches
+    // check to see if there is a key for that topic 
+    // and if not make one and assign it to an array with the name of the current teacher in it
+    // if it does exist then push the name of the teacher
+    // check for duplicate names before pushing
+    // return the object
+    // note: I don't even think you will need the second data-type for this one. 
   }
 };
 
