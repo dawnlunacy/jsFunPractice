@@ -893,7 +893,17 @@ const turingPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // So we want to return ONE object which makes me think reduce
+    // iterate over all the instructors first to make a key of their names
+    // and assign it to an array with the module number that is already given to you
+    // then while you are still on that instructor
+    // loop through the teaches array and for each one
+    // compare that key to a loop through the cohorts where
+    // you loop through the curriculum and if if there is a match
+    // then push the number for the module from cohorts into that key of 
+    // the current teacher you are on
+    // return the acc 
+    // 
   },
 
   curriculumPerTeacher() {
