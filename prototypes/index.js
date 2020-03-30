@@ -931,7 +931,16 @@ const turingPrompts = {
     //   recursion: [ 'Pam', 'Leta' ]
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.reduce((acc, currentInstructor) => {
+      currentInstructor.teaches.forEach(topic => {
+        if(!acc[topic]) {
+          acc[topic] = [currentInstructor.name];
+        } else {
+          acc[topic].push(currentInstructor.name);
+        }
+      });
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
