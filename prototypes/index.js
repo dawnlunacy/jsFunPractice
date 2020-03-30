@@ -842,7 +842,17 @@ const turingPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We want to return an array the same length as the instructors array
+    // We want to return a unique object
+    // the link between the datasets is the module 
+    // we will map over the instructors dataset
+    // we can access the name right there 
+    // for the key of studentCount we will look at the module then loop over the cohorts module to 
+    // to filter and 
+    // find a match for the module
+    // this is where you will be able to access the studentCount 
+    // return an object with the info you want
+
   },
 
   studentsPerInstructor() {
