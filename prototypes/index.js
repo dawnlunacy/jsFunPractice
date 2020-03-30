@@ -838,9 +838,14 @@ const turingPrompts = {
     //  { name: 'Robbie', studentCount: 18 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.map(instructor => {
+      return {
+        name: instructor.name,
+        studentCount: cohorts.find(cohort => cohort.module === instructor.module).studentCount
+      };
+    });
     return result;
-
+    // cohort.module === instructors.module).studentCount
     // Annotation:
     // We want to return an array the same length as the instructors array
     // We want to return a unique object
@@ -848,7 +853,7 @@ const turingPrompts = {
     // we will map over the instructors dataset
     // we can access the name right there 
     // for the key of studentCount we will look at the module then loop over the cohorts module to 
-    // to filter and 
+    // (NOTE: FILTER CREATES A NEW ARRAY SO WE JUST NEED FIND)
     // find a match for the module
     // this is where you will be able to access the studentCount 
     // return an object with the info you want
