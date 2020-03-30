@@ -753,7 +753,12 @@ const breweryPrompts = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We start with an array of objects and want to 
+    // get back an array of objects the same length
+    // each object is a custom object with the name of the brewery
+    // which can be found at the key of name
+    // and the beerCount which we can custom make and 
+    // assign it to beers.length for each brewery
   },
 
   findHighestAbvBeer() {
