@@ -838,11 +838,26 @@ const turingPrompts = {
     //  { name: 'Robbie', studentCount: 18 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.map(instructor => {
+      return {
+        name: instructor.name,
+        studentCount: cohorts.find(cohort => cohort.module === instructor.module).studentCount
+      };
+    });
     return result;
-
+    // cohort.module === instructors.module).studentCount
     // Annotation:
-    // Write your annotation here as a comment
+    // We want to return an array the same length as the instructors array
+    // We want to return a unique object
+    // the link between the datasets is the module 
+    // we will map over the instructors dataset
+    // we can access the name right there 
+    // for the key of studentCount we will look at the module then loop over the cohorts module to 
+    // (NOTE: FILTER CREATES A NEW ARRAY SO WE JUST NEED FIND)
+    // find a match for the module
+    // this is where you will be able to access the studentCount 
+    // return an object with the info you want
+
   },
 
   studentsPerInstructor() {
@@ -874,11 +889,36 @@ const turingPrompts = {
     //     Will: [1, 2, 3, 4]
     //   }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.reduce((acc, currentInstructor) => {
+      if(!acc[currentInstructor.name]) {
+        acc[currentInstructor.name] = [currentInstructor.module];
+      }
+      currentInstructor.teaches.forEach(topic => {
+        cohorts.forEach(currentCohort => {
+          if(currentCohort.curriculum.includes(topic) && !acc[currentInstructor.name].includes(currentCohort.module)) {
+            acc[currentInstructor.name].push(currentCohort.module);
+            acc[currentInstructor.name].sort((a,b) => a - b);
+          } 
+        });
+      });
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // So we want to return ONE object which makes me think reduce
+    // iterate over all the instructors first to make a key of their names
+    // and assign it to an array with the module number that is already given to you
+    // then while you are still on that instructor
+    // loop through the teaches array and for each one
+    // compare that key to a loop through the cohorts where
+    // you loop through the curriculum and if if there is a match
+    // then push the number for the module from cohorts into that key of 
+    // the current teacher you are on
+    // ensure there are no duplicates
+    // and sort my lowest mod number to highest mod number
+    // return the acc 
+    // 
   },
 
   curriculumPerTeacher() {
@@ -891,11 +931,28 @@ const turingPrompts = {
     //   recursion: [ 'Pam', 'Leta' ]
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = instructors.reduce((acc, currentInstructor) => {
+      currentInstructor.teaches.forEach(topic => {
+        if(!acc[topic]) {
+          acc[topic] = [currentInstructor.name];
+        } else {
+          acc[topic].push(currentInstructor.name);
+        }
+      });
+      return acc;
+    }, {});
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We want to return a singular object with a key of curriculum topic
+    // so we can reduce over the instructors
+    // we can then forEach over teaches
+    // check to see if there is a key for that topic 
+    // and if not make one and assign it to an array with the name of the current teacher in it
+    // if it does exist then push the name of the teacher
+    // check for duplicate names before pushing
+    // return the object
+    // note: I don't even think you will need the second data-type for this one. 
   }
 };
 
